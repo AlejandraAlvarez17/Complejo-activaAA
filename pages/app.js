@@ -35,7 +35,7 @@ usuarios.forEach(usuario =>{
 
 })
 
-const boton= document.getElementById("actividaddes");
+const boton= document.getElementById("actividades");
 const asterisco= document.getElementById("opcionactividad")
 
 asterisco.addEventListener('change', () => 

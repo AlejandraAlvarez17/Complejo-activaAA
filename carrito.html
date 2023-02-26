@@ -9,24 +9,34 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>    
-        <script src=""></script>
-    <div class="padre">  
+      
+    <div class="wrapper">
+      <header class="header-mobile">
+        <h1 class="logo">Gran complejo deportivo"Activa AA"</h1>
+        <button class="open-menu" id="open-menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </header>
         <aside>
+          <button class="close-menu" id="close-menu">
+            <i class="bi bi-x"></i>
+        </button>
            <header>
             <h1 class="logo"> Gran complejo deportivo"Activa AA"</h1>
+            
            </header>
             <nav>
                 <ul>
                     <li>
                       <a class="boton-menu boton-volver" href="./index.html">
-                      <i class="bi bi-arrow-return-left"></i>Seguir eligiendo
+                       <i class="bi bi-arrow-return-left"></i>Seguir eligiendo
                       </a>
                  
                     </li>
                    <li>
                 
                    <a class="boton-menu boton-carrito active" href= "./carrito.html">
-                    <i class="bi bi -cart-fill"></i>Carrito 
+                     <i class="bi bi -cart-fill"></i>Carrito 
                     </a>
                 </li>    
                 </ul>
@@ -48,39 +58,31 @@
     <main >
         <h2 class="titulo principal"> Carrito</h2>
         <div class="contenedor-carrito">
-          <p class="carrito-vacio disabled">Tu carrito esta vacio.<i class="bi bi-emojil-frown"></i></p>
-          <div class="carrito-actividad disabled">
-            <div class="carrito-actividad">
-              <img class="carrito actividades img" src=".//assets/img/iamgen pequeña natatorio.jpeg" alt="">
-
-              <div class="carrito-actividad-titulo">
-                <small>titulo</small>
-                <h3>Natacion 01</h3>
+          <p id="carrito-vacio" class="carrito-vacio ">Tu carrito esta vacio<i class="bi bi-emojil-frown"></i></p>
+          
+          <div id="carrito-actividades" class="carrito-actividades disabled">
+            <!--esto se va a llenar con js-->
+           
               </div>
-              <div>
-                <div class="carrito-actividad-cantidad"> 
-                  <small>cantidad</small>
-                <p>1</p>
+            <div id="carrito-acciones" class="carrito-acciones disabled">
+              <div class="carrito-acciones-izquierda">
+                <botton id="carrito-acciones-vaciar"  class="carrito-acciones-vaciar">Vaciar carrito</botton>
               </div>
-                  <div class="carrito-actividad-precio">
-                    <small>Costo</small>
-                    <P>€50</P>
-                  </div>
-                  <div class="carrito-producto-subtotal">
-                    <small>subtotal</small>
-                    <p>€50</p>
-                  </div>
-                   <botton class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></botton>
+              <div class="carrito-acciones-derecha">
+                <div  class="carrito-acciones-total">
+                  <p>Total:</p>
+                  <p id="total">€80</p>
                 </div>
+                </botton id="carrito-acciones-comprar"  class="carrito-acciones-comprar">Comprar ahora</botton>
               </div>
-            </div>
           </div>
-
+           <p id="carrito-comprado"  class="carrito-comprado disabled">Gracias por elegirnos<i class="bi bi-emojil-laughing"></i></p>
         </div>
 
       </main>
 
    
-     >
+      <script src="./pages/actividades.js"></script>
+    <script src="./pages/carrito.js"></script>
 </body>
 </html>

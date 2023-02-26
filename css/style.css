@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis,com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis,com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
     --clr-main: #4b33a8;
     --clr-white: #ececec;
     --clr-gray: #e2e2e2;
-    --clr-read: #961818;
+    --clr-red: #961818;
     --clr-main-light: #9981f9;
-
+    --clr-main-light: #785ce9;
+    
 }
 * {margin: o;
     padding: o;
@@ -35,7 +36,7 @@ footer{
     background-color: #961818;
  }
 
-.padre {
+.wrapper {
     display:grid;
     grid-template-columns: 1fr 4fr;
     background-color:var(--cl-main);
@@ -51,20 +52,26 @@ aside{
     justify-content: space-between;
     padding-right: 0;
 }
+.contactanos{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+
+ }
 .logo{
     font-weight: 400;
     font-size: 1.3rem;
-    background-color: var(--clr-write);
+   /* background-color: var(--clr-write);*/
 }
 .menu{
     display: flex;
     flex-direction: column;
-    gap:2rem
+    gap:.5rem
 }
-.boton-menu-boton-categoria{
+.boton-menu{
     background-color: transparent;
     border: 0;
-    color: var(--clr-white);
+    color: black;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -73,11 +80,12 @@ aside{
     font-weight: 600;
     padding: 1rem;
     font-size: .85rem;
+    width: 100%;
 }
-.boton-menu.activa{
+.boton-menu.active{
     background-color: var(--clr-white);
     color: var(--cl-main);
-    width: 100%;
+    
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     position: relative;
@@ -91,7 +99,7 @@ aside{
  right: 0;
  background-color: transparent;
  border-bottom-right-radius: 5rem;
- box-shadow: 0 1rem 0var(--clr-write);
+ box-shadow: 0 1rem 0 var(--clr-write);
 }
 .boton-menu.active::after {
     content: '';
@@ -114,7 +122,7 @@ aside{
 .numerito{
     background-color: var(--clr-white);
     color:var(--cl-main);
-    padding: .15rem;
+    padding: .15rem .25rem;
     border-radius: .25rem;
 }
 .botton-carrito.active.numerito{
@@ -123,15 +131,23 @@ aside{
 }
  .texto-footer{
     color: var(--clr-main-light);
-    font-size: 1rem;  
+    font-size: .85rem;  
  }
  .section{
-    flex-direction: column;
+    display: flex;
     justify-content: space-between;
-    display:center;
+    align-content: center;
+    padding: 0;
     background-color: #961818;
+   
  }
- 
+ main{
+    background-color: var(--clr-main);
+    margin:1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+ }
  
  .titulo-principal{
     color: var(--clr-main);
@@ -139,7 +155,8 @@ aside{
  }
  .contenedor-actividades{
   display:grid;
-  grid-template-columns: repeat(8,1fr);
+  grid-template-columns: repeat(2,1fr);
+  gap:1rem;
  }
 .actividad-img{
     max-width: 100%;
@@ -167,7 +184,7 @@ aside{
     text-transform: uppercase;
     border-radius: 2rem;
     cursor: pointer;
-    border: 2px solid var(--cl-main);
+    border: 2px solid var(--clr-white);
     transition:background-color.2s,color.2s;
  }
  .actividad-agregar:hover{
@@ -177,7 +194,10 @@ aside{
  }
  .contenedor-carrito{
     display: flex;
+    flex-direction: column;
+    gap:1.5rem;
  }
+ .carrito-comprado,
 .carrito-vacio{
     color: var(--cl-main);
     display: none;
@@ -198,7 +218,7 @@ aside{
     border-radius: 1rem;
 }
 .carrito-actividad-imagen{
-    width: 4rem;
+    width: 1rem;
     border-radius: 1rem;
 }
 .carrito-actividad-small{
@@ -207,7 +227,7 @@ aside{
 .carrito-actividad-eliminar{
     border:0;
     background-color: transparent;
-    color:var(--clr-read);
+    color:var(--clr-red);
     cursor: pointer;
 }
 .carrito-acciones{
@@ -231,7 +251,7 @@ aside{
     display: flex;
     background-color: var(--clr-gray);
     padding: 1rem;
-    border-radius: 1rem;
+    /*border-radius: 1rem;*/
     color:var(--cl-main);
     text-transform: uppercase;
     border-top-left-radius: 1rem;
@@ -242,7 +262,7 @@ aside{
     border:0;
     background-color: var(--clr-main);
     padding: 1rem;
-    border-radius: 1rem;
+    /*border-radius: 1rem;*/
     color:var(--clr-white);
     text-transform: uppercase;
     cursor: pointer;
@@ -250,6 +270,14 @@ aside{
     border-bottom-right-radius: 1rem;
 
 }
-.disabled{
+.header-mobile {
     display: none;
+}
+
+.close-menu {
+    display: none;
+}
+
+.disabled{
+ display: none;
 }
