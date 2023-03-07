@@ -54,3 +54,7 @@ boton.addEventListener("click", () => {
           audio.play();
         });
       });
+
+
+localStorage.setItem(`asterisco`,JSON.stringify(opcionactividad));
+localStorage.getItem(`asterisco`,JSON.stringify(opcionactividad));
