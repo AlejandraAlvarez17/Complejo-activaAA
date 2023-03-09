@@ -58,3 +58,56 @@ boton.addEventListener("click", () => {
 
 localStorage.setItem(`asterisco`,JSON.stringify(opcionactividad));
 localStorage.getItem(`asterisco`,JSON.stringify(opcionactividad));
+
+window.addEventListener(`DOMContentLoaded`,traerUsuarioContacto)
+
+
+function cargarUsuarios()
+{ 
+  let usuarios = new Usuario()
+  usuarios.nombre = prompt()
+  usuarios.apellido = prompt()
+  usuarios.edad = prompt()
+  usuarios.domicilio = prompt()
+  usuarios.documento = prompt()
+  usuarios.actividad = parseFloat(prompt("ingrese actividadElegida"))
+
+  lista.push(usuarios);
+  localStorage.setItem(`contactos`,JSON.stringify(usuario1));
+  mostrarUsuariosDOM();
+   
+
+}
+for (const usuarios of usuarios){
+  guardarLocal(usuarios.id,JSON.stringify(usuarios));
+
+}
+guardarLocal("listausuarios", JSON.stringify(usuarios));
+console.log(usuarios)
+
+usuarios = JSON.parse(localStorage.getItem(`usuarios`));
+
+ let miContacto = documet.getElementById("contacto");
+ miContacto.addEventListener("submit",validarContacto);
+
+ function validarContacto(e){
+    e.preventDefault();
+    console.log("Contacto Enviado");
+ }
+
+ const urlUsuarios = "https://jsonplaceholder.typicode.com/users";
+ const listaUsuarios = document.querySelector("#lista-usuarios");
+
+ fetch(urlUsuarios)
+ .then((response)=>response.json() )
+ .then((data)=> {
+      mostrarUsuarios(data);
+  })    
+  function mostrarUsuarios(usuarios) { 
+    usuarios.forEach(ususuario=> {  
+  const form = document.createElement("form");
+  form.innerText = usuarios.name + "<br>documeto: "+ usuarios.nomber;
+  listaUsuarios.append(form);
+  })
+  
+}
